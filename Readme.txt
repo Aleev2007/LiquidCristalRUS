@@ -24,10 +24,8 @@ const PROGMEM char str[] = "СТРОКА";
 lcd.print(str);
 ...
 НЕ РАБОТАЕТ!!!
-
 Как правильно работать с PROGMEM написано здесь:
 https://www.arduino.cc/reference/en/language/variables/utilities/progmem/
-
 или если строки редко повторяются, но хочется 
 весь тектс написать в одном месте, можно использовать:
 #define str1 "Строка один"
