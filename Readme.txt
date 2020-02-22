@@ -11,10 +11,11 @@ lcd.print(( F("текст"));
 для хранения строк во флэш памяти. 
 
 ИСПОЛЬЗОВАНИЕ 
-1. Распакуйте LiquidCrystalRUS.zip в папку \Documents\Arduino\libraries\
-2. В проекте выберите подключить библиотеку LiquidCrystalRUS.
-3. Подключать LiquidCristal не требуется!
-4. Примеры использования от LiquidCristal полностью подходят.
+1. Скачайте https://github.com/Aleev2007/LiquidCristalRUS/raw/master/LiquidCrystalRUS.zip
+2. Распакуйте LiquidCrystalRUS.zip в папку \Documents\Arduino\libraries\
+3. В проекте выберите подключить библиотеку LiquidCrystalRUS.
+4. Подключать LiquidCristal не требуется!
+5. Примеры использования от LiquidCristal полностью подходят.
 ***********************
 
 Помните, что конструкция:
