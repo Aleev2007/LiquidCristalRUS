@@ -10,12 +10,20 @@
 lcd.print(( F("текст"));
 для хранения строк во флэш памяти. 
 
-
+ИСПОЛЬЗОВАНИЕ 
+1. Распакуйте LiquidCrystalRUS.zip в папку \Documents\Arduino\libraries\
+2. В проекте выберите подключить библиотеку LiquidCrystalRUS.
+3. Подключать LiquidCristal не требуется!
+4. Примеры использования от LiquidCristal полностью подходят.
+***********************
 
 Помните, что конструкция:
+...
 const PROGMEM char str[] = "СТРОКА";
+...
 lcd.print(str);
-НЕ работает!!!
+...
+НЕ РАБОТАЕТ!!!
 
 Как правильно работать с PROGMEM написано здесь:
 https://www.arduino.cc/reference/en/language/variables/utilities/progmem/
