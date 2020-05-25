@@ -1,7 +1,9 @@
 ﻿#ifndef LiquidCrystalRUS_h
 #define LiquidCrystalRUS_h
 
+#ifndef LiquidCrystal_I2C_h
 #include "LiquidCrystal.h"
+#endif
 
 static const unsigned char offset_D0 = 0x90;
 static const unsigned char offset_D1 = 0x50;
@@ -17,7 +19,10 @@ static const char _RUS[] PROGMEM = {            // character encoding table from
  0x70,0x63,0xBF,0x79,0xE4,0x78,0xE5,0xC0,       // <-- offset -0x50 for 0xD1## chars
  0xC1,0xE6,0xC2,0xC3,0xC4,0xC5,0xC6,0xC7 };
 
-class LiquidCrystalRUS : public LiquidCrystal {
+class LiquidCrystalRUS : public 
+#ifndef LiquidCrystal_I2C_h 
+    LiquidCrystal 
+{
 public:
     LiquidCrystalRUS(uint8_t rs, uint8_t enable,
         uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
@@ -36,11 +41,22 @@ public:
     LiquidCrystalRUS(uint8_t rs, uint8_t enable,
         uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3) :
         LiquidCrystal(rs, enable, d0, d1, d2, d3) {}
+#else
+    LiquidCrystal_I2C
+{
+public:
+    LiquidCrystalRUS(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows) :
+        LiquidCrystal_I2C(lcd_Addr, lcd_cols, lcd_rows) {}
+#endif
 
   virtual size_t write(const uint8_t*, size_t);
   size_t LiquidCrystalRUS::print(const __FlashStringHelper*);
   
+#ifndef LiquidCrystal_I2C_h 
   using LiquidCrystal::write;
+#else
+  using LiquidCrystal_I2C::write;
+#endif
   using Print::print;
 };
 
